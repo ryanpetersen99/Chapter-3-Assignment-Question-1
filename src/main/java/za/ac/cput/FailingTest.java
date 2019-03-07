@@ -4,10 +4,13 @@ import java.util.*;
 
 public class FailingTest {
 
-    List list = new ArrayList();
+    int a = 2000;
+    int b = 2000;
 
-    public List list(){
-        list.add("217027806");
-        return list;
+
+
+
+    public int Integer(){
+        return a + b;
     }
 }

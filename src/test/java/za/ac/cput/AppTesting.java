@@ -1,11 +1,13 @@
 package za.ac.cput;
 
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
-import static org.junit.Assert.fail;
-
 import org.junit.Assert;
+import org.junit.Ignore;
 import org.junit.Test;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import static org.junit.Assert.*;
 
 /**
  * Unit test for simple ObjectEquality.
@@ -28,16 +30,27 @@ public class AppTesting
         Assert.assertNotSame(OI.Nissan(),OI.BMW());
     }
 
-  /*  @org.junit.Test
-    public void FailingTest(){
+    @Test
+    public void FailingTest() {
         FailingTest FT = new FailingTest();
-      try{
-          FT.list();
-          fail("Excepted an empty array list");
-      }
-      catch (NullPointerException e){
-        } */
+        try {
+            FT.Integer();
+            fail("failed");
+        } catch (NullPointerException e) {
 
+        }
+    }
+
+        @Ignore
+        public void DisablingTest() {
+            DisablingTest dt = new DisablingTest();
+            List list = new ArrayList();
+            list.add("March");
+            list.add("May");
+            list.add("June");
+            assertEquals(list,dt.Months());
+            }
 
     }
+
 
