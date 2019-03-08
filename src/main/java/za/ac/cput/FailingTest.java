@@ -1,16 +1,16 @@
 package za.ac.cput;
 
+import java.text.DecimalFormat;
 import java.util.*;
 
 public class FailingTest {
 
-    int a = 2000;
-    int b = 2000;
+    int a  = 150;
+    int b = 125;
+    int c= 100;
+    int d = 200;
 
-
-
-
-    public int Integer(){
-        return a + b;
+    public int Calculation(){
+        return a + b * c / d;
     }
 }

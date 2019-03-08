@@ -2,28 +2,33 @@ package za.ac.cput;
 
 import org.junit.Assert;
 import org.junit.Ignore;
+import org.junit.Rule;
 import org.junit.Test;
 
 import java.util.ArrayList;
 import java.util.List;
 
+import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.*;
 
 /**
- * Unit test for simple ObjectEquality.
+ *Ryan Petersen
+ * 217027806
+ * 3G
+ * Chapter3 Question 1
  */
 public class AppTesting
 {
     /**
      * Rigorous AppTesting :-)
      */
-    @org.junit.Test
+    @Test
     public void ObjectEqualityTest(){
         ObjectEquality OE = new ObjectEquality();
         Assert.assertEquals(OE.result1(),OE.result2());
     }
 
-    @org.junit.Test
+    @Test
     public  void  ObjectIdentity(){
         ObjectIdentity OI = new ObjectIdentity();
         Assert.assertSame(OI.Nissan(),OI.Honda());
@@ -33,22 +38,21 @@ public class AppTesting
     @Test
     public void FailingTest() {
         FailingTest FT = new FailingTest();
-        try {
-            FT.Integer();
-            fail("failed");
-        } catch (NullPointerException e) {
-
-        }
+        fail("The test has failed");
+        Assert.assertEquals(212,FT.Calculation());
     }
 
         @Ignore
         public void DisablingTest() {
             DisablingTest dt = new DisablingTest();
-            List list = new ArrayList();
-            list.add("March");
-            list.add("May");
-            list.add("June");
-            assertEquals(list,dt.Months());
+            List<String> actualList = dt.Months();
+            assertThat(actualList.size(), is(12));
+            }
+
+        @Test(timeout = 1000)
+        public void Timeout() throws InterruptedException {
+        Timeout to = new Timeout();
+        assertThat(to.InterestCalucation(),is(8.771929824561404));
             }
 
     }
